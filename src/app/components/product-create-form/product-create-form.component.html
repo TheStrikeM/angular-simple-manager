@@ -1,0 +1,35 @@
+<div style="padding: 10px; display: flex; justify-content: center; flex-direction: column" class="container">
+    <div class="form-group">
+      <label for="name">Name of product</label>
+      <input
+        #productName
+        class="form-control"
+        placeholder="Enter name of product"
+        id="name"
+      >
+    </div>
+    <div class="form-group">
+      <label for="description">Description of product</label>
+      <input
+        #productDescription
+        class="form-control"
+        placeholder="Enter description of product"
+        id="description"
+      >
+    </div>
+    <div class="form-group">
+      <label for="description">Price of product</label>
+      <input
+        #productPrice
+        class="form-control"
+        placeholder="Enter price of product"
+        id="price"
+      >
+    </div>
+
+    <select class="form-select" aria-label="1" [(ngModel)]="selectedValue">
+      <option *ngFor="let category of categories" [ngValue]="category.id">{{ category.name }}</option>
+    </select>
+
+    <button style="margin-top: 10px; " (click)="addNewProduct(refactorToIProduct(productName.value, productDescription.value, Number(productPrice.value), selectedValue))" class="btn btn-dark">Add</button>
+</div>

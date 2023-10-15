@@ -1,0 +1,9 @@
+<div style="margin: 40px; width: 400px; box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);" class="card">
+  <div class="card-header">Product cost ${{ product.price }}; <span style="margin-left: 10px; color: darkorange">Category: {{ product.category }}</span></div>
+  <div class="card-body">
+    <h5 class="card-title">{{ product.name }}</h5>
+    <a (click)="onShowDetailsClick()" href="#" class="btn btn-dark">{{ showDetails ? "Hide details" : "Show details" }}</a>
+    <button (click)="onDeleteItemClick(product.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+    <p *ngIf="showDetails" class="card-text w-75">{{ product.description }}</p>
+  </div>
+</div>
